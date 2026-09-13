@@ -1,0 +1,3 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/AI-ChatBot/.venv/Scripts/python.exe"
+}

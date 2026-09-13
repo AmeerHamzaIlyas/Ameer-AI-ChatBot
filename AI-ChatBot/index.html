@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ameer AI ChatBot — Next-Generation Co-Pilot</title>
+  <meta name="description" content="Personalize and launch Ameer AI ChatBot with customized personas, multimodal reasoning, and real-time intelligence powered by Google Gemini.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient Atmospheric Lighting -->
+  <div class="ambient-glow">
+    <div class="glow-orb-1"></div>
+    <div class="glow-orb-2"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <main class="onboarding-app" id="onboardingApp">
+    <!-- Wizard Card -->
+    <div class="glass-card" id="wizardCard">
+      <!-- App Header -->
+      <header class="app-header">
+        <div class="brand-badge">
+          <img src="assets/avatar.jpg" alt="Ameer AI Avatar" class="brand-icon">
+          <span class="brand-title">Ameer AI</span>
+        </div>
+        <div class="status-pill" id="headerStatusPill">
+          <span class="status-dot"></span>
+          <span id="headerStatusText">Ameer AI Engine Active</span>
+        </div>
+      </header>
+
+      <!-- Stepper Progress Tracker -->
+      <nav class="stepper-container" aria-label="Onboarding Progress">
+        <div class="stepper">
+          <div class="progress-line" id="progressLine" style="width: 0%;"></div>
+          
+          <button class="step-node active" data-step="1" id="stepNode1" aria-label="Step 1: Welcome">
+            <div class="step-circle">1</div>
+            <span class="step-label">Welcome</span>
+          </button>
+          
+          <button class="step-node" data-step="2" id="stepNode2" aria-label="Step 2: Persona">
+            <div class="step-circle">2</div>
+            <span class="step-label">Persona</span>
+          </button>
+          
+          <button class="step-node" data-step="3" id="stepNode3" aria-label="Step 3: Capabilities">
+            <div class="step-circle">3</div>
+            <span class="step-label">Capabilities</span>
+          </button>
+          
+          <button class="step-node" data-step="4" id="stepNode4" aria-label="Step 4: Launch">
+            <div class="step-circle">4</div>
+            <span class="step-label">Launch</span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Step Viewports -->
+      <div class="steps-viewport">
+        <!-- Step 1: Welcome -->
+        <section class="step-content active" id="stepView1">
+          <div class="hero-wrapper">
+            <div class="hero-avatar-box">
+              <img src="assets/avatar.jpg" alt="Ameer AI Hologram" class="hero-avatar-img">
+            </div>
+            <div class="hero-text">
+              <span class="welcome-badge">Next-Gen Intelligence</span>
+              <h1 class="step-title">Meet <span class="gradient-text">Ameer AI</span>, your intelligent co-pilot.</h1>
+              <p class="step-desc">
+                Engineered for developers, creators, and analysts powered by Google Gemini. Experience reasoning that anticipates your workflow with zero latency and unprecedented depth.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-pill-grid">
+            <div class="feature-pill-card">
+              <span class="pill-icon">⚡</span>
+              <h3 class="pill-heading">Instant Inference</h3>
+              <p class="pill-body">Gemini Flash sub-second streaming and rapid token generation.</p>
+            </div>
+            <div class="feature-pill-card">
+              <span class="pill-icon">🧠</span>
+              <h3 class="pill-heading">Deep Reasoning</h3>
+              <p class="pill-body">Multi-step chain-of-thought analysis for complex problem solving.</p>
+            </div>
+            <div class="feature-pill-card">
+              <span class="pill-icon">🌐</span>
+              <h3 class="pill-heading">Multimodal Native</h3>
+              <p class="pill-body">Fluidly process code, documents, architecture schemas, and data.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Step 2: Persona & Tone -->
+        <section class="step-content" id="stepView2">
+          <h2 class="step-title">Tailor your <span class="gradient-text">Ameer AI Companion</span></h2>
+          <p class="step-desc">Select how Ameer AI should think, speak, and collaborate with you.</p>
+
+          <div class="role-grid" id="roleGrid" role="radiogroup" aria-label="Select AI Persona">
+            <div class="role-card selected" data-role="Software Architect" data-desc="Production-grade clean code, architectural patterns, and performance tuning." role="radio" aria-checked="true" tabindex="0">
+              <div class="role-icon">💻</div>
+              <div class="role-info">
+                <h4>Software Architect & Coder</h4>
+                <p>Idiomatic code, refactoring patterns, and systems design.</p>
+              </div>
+              <div class="radio-check"></div>
+            </div>
+
+            <div class="role-card" data-role="Research Analyst" data-desc="Evidence-backed analysis, statistical breakdown, and structured data synthesis." role="radio" aria-checked="false" tabindex="0">
+              <div class="role-icon">📊</div>
+              <div class="role-info">
+                <h4>Research & Data Analyst</h4>
+                <p>Data breakdowns, statistical modeling, and hypothesis testing.</p>
+              </div>
+              <div class="radio-check"></div>
+            </div>
+
+            <div class="role-card" data-role="Creative Strategist" data-desc="Persuasive storytelling, UI copy, brainstorming, and marketing hooks." role="radio" aria-checked="false" tabindex="0">
+              <div class="role-icon">🎨</div>
+              <div class="role-info">
+                <h4>Creative & Product Strategist</h4>
+                <p>Product intuition, compelling messaging, and creative ideation.</p>
+              </div>
+              <div class="radio-check"></div>
+            </div>
+
+            <div class="role-card" data-role="Autonomous Executive" data-desc="Concise decision memos, task delegation plans, and productivity frameworks." role="radio" aria-checked="false" tabindex="0">
+              <div class="role-icon">⚡</div>
+              <div class="role-info">
+                <h4>Executive Co-Pilot</h4>
+                <p>Rapid synthesis, strategic memos, and executive summaries.</p>
+              </div>
+              <div class="radio-check"></div>
+            </div>
+          </div>
+
+          <div class="tone-selector-section">
+            <h3 class="sub-section-title">Response Tone & Verbosity</h3>
+            <div class="tone-pills-row" id="toneRow" role="radiogroup" aria-label="Select Response Tone">
+              <button class="tone-pill-btn selected" data-tone="Concise & Code-First" role="radio" aria-checked="true">
+                🎯 Concise & Direct
+              </button>
+              <button class="tone-pill-btn" data-tone="Balanced & Clear" role="radio" aria-checked="false">
+                ⚖️ Balanced & Clear
+              </button>
+              <button class="tone-pill-btn" data-tone="Deep Architectural Explanations" role="radio" aria-checked="false">
+                🔬 Deep Architectural Explanations
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Step 3: Capabilities & Interactive Sampler -->
+        <section class="step-content" id="stepView3">
+          <h2 class="step-title">Explore <span class="gradient-text">Core Capabilities</span></h2>
+          <p class="step-desc">Click any capability below to preview Ameer AI’s live generative output.</p>
+
+          <div class="sampler-container">
+            <div class="sampler-menu" id="samplerMenu">
+              <button class="sampler-tab active" data-sample="code">
+                <span class="tab-icon">⚡</span>
+                <div>
+                  <div class="tab-text-title">Code Generation</div>
+                  <div class="tab-text-subtitle">Algorithms & Fullstack</div>
+                </div>
+              </button>
+
+              <button class="sampler-tab" data-sample="vision">
+                <span class="tab-icon">👁️</span>
+                <div>
+                  <div class="tab-text-title">Multimodal Vision</div>
+                  <div class="tab-text-subtitle">UI & Schema Inspector</div>
+                </div>
+              </button>
+
+              <button class="sampler-tab" data-sample="analysis">
+                <span class="tab-icon">📐</span>
+                <div>
+                  <div class="tab-text-title">Systems Architecture</div>
+                  <div class="tab-text-subtitle">Scalability & Latency</div>
+                </div>
+              </button>
+            </div>
+
+            <div class="sampler-preview-window">
+              <div class="preview-bar">
+                <div class="window-dots">
+                  <div class="window-dot dot-red"></div>
+                  <div class="window-dot dot-yellow"></div>
+                  <div class="window-dot dot-green"></div>
+                </div>
+                <span class="preview-tag" id="previewLanguageTag">TYPESCRIPT</span>
+              </div>
+              <div class="preview-content" id="samplerPreviewText"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Step 4: Ready to Launch -->
+        <section class="step-content" id="stepView4">
+          <h2 class="step-title">Your workspace is <span class="gradient-text">ready</span></h2>
+          <p class="step-desc">Your customized environment has been configured. Select a starting prompt or launch directly.</p>
+
+          <div class="launch-summary-card">
+            <div class="summary-meta-grid">
+              <div class="meta-item">
+                <div class="meta-label">Selected Persona</div>
+                <div class="meta-val" id="summaryPersona">Software Architect</div>
+              </div>
+              <div class="meta-item">
+                <div class="meta-label">Tone Style</div>
+                <div class="meta-val" id="summaryTone">Concise & Direct</div>
+              </div>
+              <div class="meta-item">
+                <div class="meta-label">Model Engine</div>
+                <div class="meta-val" id="summaryModel">gemini-flash-latest</div>
+              </div>
+            </div>
+
+            <div class="suggested-prompts-title">💡 Suggested Quick-Start Prompts</div>
+            <div class="suggested-prompts" id="suggestedPrompts">
+              <div class="prompt-chip" data-prompt="Architect a real-time collaborative canvas with WebSockets and CRDTs." role="button" tabindex="0">
+                <span>"Architect a real-time collaborative canvas with WebSockets and CRDTs."</span>
+                <span class="arrow">→</span>
+              </div>
+              <div class="prompt-chip" data-prompt="Refactor this asynchronous data pipeline for sub-50ms latency." role="button" tabindex="0">
+                <span>"Refactor this asynchronous data pipeline for sub-50ms latency."</span>
+                <span class="arrow">→</span>
+              </div>
+              <div class="prompt-chip" data-prompt="Generate an interactive SVG dashboard widget with modern glassmorphism." role="button" tabindex="0">
+                <span>"Generate an interactive SVG dashboard widget with modern glassmorphism."</span>
+                <span class="arrow">→</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Footer Navigation Controls -->
+      <footer class="app-footer">
+        <div class="footer-left">
+          <button class="btn btn-secondary" id="prevBtn" disabled>
+            ← Previous
+          </button>
+          <button class="btn btn-ghost" id="skipBtn">
+            Skip Setup
+          </button>
+        </div>
+        <div class="footer-right">
+          <button class="btn btn-primary" id="nextBtn">
+            Continue →
+          </button>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Interactive Chat Workspace (Revealed on Launch) -->
+    <div class="glass-card chat-workspace-view" id="chatWorkspace">
+      <div class="chat-nav">
+        <div class="chat-assistant-meta">
+          <img src="assets/avatar.jpg" alt="Ameer AI Avatar" class="chat-avatar-mini">
+          <div>
+            <div style="font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+              Ameer AI ChatBot
+              <span class="model-badge" id="chatModelBadge">gemini-flash-latest</span>
+            </div>
+            <div style="font-size: 0.75rem; color: var(--accent-cyan);" id="activePersonaBadge">Software Architect Mode</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn btn-secondary" id="openSettingsBtn" style="padding: 6px 12px; font-size: 0.78rem;">
+            ⚙️ Settings
+          </button>
+          <button class="btn btn-secondary" id="reopenOnboardingBtn" style="padding: 6px 12px; font-size: 0.78rem;">
+            🔄 Reconfigure
+          </button>
+        </div>
+      </div>
+
+      <!-- Settings Dropdown / Drawer -->
+      <div class="settings-drawer" id="settingsDrawer" style="display: none;">
+        <div class="settings-header">
+          <span>AI Engine & API Key Settings</span>
+          <button id="closeSettingsBtn" class="close-btn">&times;</button>
+        </div>
+        <div class="settings-body">
+          <div class="setting-item">
+            <label for="apiKeyInput">Gemini API Key (Optional if server environment is set):</label>
+            <input type="password" id="apiKeyInput" placeholder="Configured via .env or enter key here...">
+          </div>
+          <div class="setting-item">
+            <label for="modelSelect">Gemini Model:</label>
+            <select id="modelSelect">
+              <option value="gemini-flash-latest" selected>gemini-flash-latest (Fastest, Recommended)</option>
+              <option value="gemini-3.6-flash">gemini-3.6-flash (Advanced Reasoning)</option>
+              <option value="gemini-3.7-flash">gemini-3.7-flash (Multimodal & Agentic)</option>
+              <option value="gemini-2.5-flash">gemini-2.5-flash (Preview Alias)</option>
+            </select>
+          </div>
+          <div class="settings-footer">
+            <button class="btn btn-primary" id="saveSettingsBtn" style="padding: 6px 14px; font-size: 0.8rem;">Save Settings</button>
+            <span id="saveNotice" style="font-size: 0.75rem; color: #4ade80; display: none;">Saved!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-stream" id="chatStream">
+        <div class="msg-row ai">
+          <div class="msg-bubble" id="welcomeChatMsg">
+            👋 <strong>Welcome!</strong> I am calibrated to your preferences as your <strong>Software Architect &amp; Coder</strong>. Connected via Ameer AI Engine (Google Gemini). How can I help you build today?
+          </div>
+        </div>
+      </div>
+
+      <form class="chat-input-zone" id="chatForm">
+        <textarea class="chat-input-field" id="chatInputField" rows="1" placeholder="Ask Ameer AI anything about code, architecture, or research... (Enter to send, Shift+Enter for newline)" autocomplete="off"></textarea>
+        <button type="submit" class="btn btn-primary" id="sendBtn" style="padding: 10px 20px;">Send ↵</button>
+      </form>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
