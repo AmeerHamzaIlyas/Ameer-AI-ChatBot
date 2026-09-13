@@ -14,10 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     apiKey: localStorage.getItem('ameer_ai_gemini_api_key') || localStorage.getItem('nova_gemini_api_key') || ''
   };
 
-  // Resilient API base URL (auto-targets localhost:8000 if opened from file:// or other port)
-  const API_BASE = (window.location.protocol === 'http:' || window.location.protocol === 'https:') && window.location.port === '8000'
-    ? ''
-    : 'http://localhost:8000';
+  // Universal API base URL: Use relative path '' on all live servers and tunnels; only fallback to localhost:8000 if opened via file://
+  const API_BASE = window.location.protocol === 'file:' ? 'http://localhost:8000' : '';
 
   // DOM Elements - Wizard
   const wizardCard = document.getElementById('wizardCard');
