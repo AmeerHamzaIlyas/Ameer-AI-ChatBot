@@ -1,10 +1,15 @@
-#  Ameer AI ChatBot
+---
+title: Ameer AI ChatBot
+emoji: 🤖
 colorFrom: blue
 colorTo: purple
 sdk: gradio
 sdk_version: 5.0.0
 app_file: app.py
 pinned: false
+---
+#  Ameer AI ChatBot
+
  A smart, sleek, and adaptable AI co-pilot designed to think, code, and strategize with you — powered by Google Gemini.
  Why Ameer AI?
 
