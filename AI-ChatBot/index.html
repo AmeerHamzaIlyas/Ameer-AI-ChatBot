@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ameer AI ChatBot — Next-Generation Co-Pilot</title>
-  <meta name="description" content="Personalize and launch Ameer AI ChatBot with customized personas, multimodal reasoning, and real-time intelligence powered by Google Gemini.">
+  <meta name="description"
+    content="Personalize and launch Ameer AI ChatBot with customized personas, multimodal reasoning, and real-time intelligence powered by Google Gemini.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <!-- Ambient Atmospheric Lighting -->
   <div class="ambient-glow">
@@ -37,22 +42,22 @@
       <nav class="stepper-container" aria-label="Onboarding Progress">
         <div class="stepper">
           <div class="progress-line" id="progressLine" style="width: 0%;"></div>
-          
+
           <button class="step-node active" data-step="1" id="stepNode1" aria-label="Step 1: Welcome">
             <div class="step-circle">1</div>
             <span class="step-label">Welcome</span>
           </button>
-          
+
           <button class="step-node" data-step="2" id="stepNode2" aria-label="Step 2: Persona">
             <div class="step-circle">2</div>
             <span class="step-label">Persona</span>
           </button>
-          
+
           <button class="step-node" data-step="3" id="stepNode3" aria-label="Step 3: Capabilities">
             <div class="step-circle">3</div>
             <span class="step-label">Capabilities</span>
           </button>
-          
+
           <button class="step-node" data-step="4" id="stepNode4" aria-label="Step 4: Launch">
             <div class="step-circle">4</div>
             <span class="step-label">Launch</span>
@@ -72,7 +77,8 @@
               <span class="welcome-badge">Next-Gen Intelligence</span>
               <h1 class="step-title">Meet <span class="gradient-text">Ameer AI</span>, your intelligent co-pilot.</h1>
               <p class="step-desc">
-                Engineered for developers, creators, and analysts powered by Google Gemini. Experience reasoning that anticipates your workflow with zero latency and unprecedented depth.
+                Engineered for developers, creators, and analysts powered by Google Gemini. Experience reasoning that
+                anticipates your workflow with zero latency and unprecedented depth.
               </p>
             </div>
           </div>
@@ -102,7 +108,9 @@
           <p class="step-desc">Select how Ameer AI should think, speak, and collaborate with you.</p>
 
           <div class="role-grid" id="roleGrid" role="radiogroup" aria-label="Select AI Persona">
-            <div class="role-card selected" data-role="Software Architect" data-desc="Production-grade clean code, architectural patterns, and performance tuning." role="radio" aria-checked="true" tabindex="0">
+            <div class="role-card selected" data-role="Software Architect"
+              data-desc="Production-grade clean code, architectural patterns, and performance tuning." role="radio"
+              aria-checked="true" tabindex="0">
               <div class="role-icon">💻</div>
               <div class="role-info">
                 <h4>Software Architect & Coder</h4>
@@ -111,7 +119,9 @@
               <div class="radio-check"></div>
             </div>
 
-            <div class="role-card" data-role="Research Analyst" data-desc="Evidence-backed analysis, statistical breakdown, and structured data synthesis." role="radio" aria-checked="false" tabindex="0">
+            <div class="role-card" data-role="Research Analyst"
+              data-desc="Evidence-backed analysis, statistical breakdown, and structured data synthesis." role="radio"
+              aria-checked="false" tabindex="0">
               <div class="role-icon">📊</div>
               <div class="role-info">
                 <h4>Research & Data Analyst</h4>
@@ -120,7 +130,9 @@
               <div class="radio-check"></div>
             </div>
 
-            <div class="role-card" data-role="Creative Strategist" data-desc="Persuasive storytelling, UI copy, brainstorming, and marketing hooks." role="radio" aria-checked="false" tabindex="0">
+            <div class="role-card" data-role="Creative Strategist"
+              data-desc="Persuasive storytelling, UI copy, brainstorming, and marketing hooks." role="radio"
+              aria-checked="false" tabindex="0">
               <div class="role-icon">🎨</div>
               <div class="role-info">
                 <h4>Creative & Product Strategist</h4>
@@ -129,7 +141,9 @@
               <div class="radio-check"></div>
             </div>
 
-            <div class="role-card" data-role="Autonomous Executive" data-desc="Concise decision memos, task delegation plans, and productivity frameworks." role="radio" aria-checked="false" tabindex="0">
+            <div class="role-card" data-role="Autonomous Executive"
+              data-desc="Concise decision memos, task delegation plans, and productivity frameworks." role="radio"
+              aria-checked="false" tabindex="0">
               <div class="role-icon">⚡</div>
               <div class="role-info">
                 <h4>Executive Co-Pilot</h4>
@@ -148,7 +162,8 @@
               <button class="tone-pill-btn" data-tone="Balanced & Clear" role="radio" aria-checked="false">
                 ⚖️ Balanced & Clear
               </button>
-              <button class="tone-pill-btn" data-tone="Deep Architectural Explanations" role="radio" aria-checked="false">
+              <button class="tone-pill-btn" data-tone="Deep Architectural Explanations" role="radio"
+                aria-checked="false">
                 🔬 Deep Architectural Explanations
               </button>
             </div>
@@ -204,7 +219,8 @@
         <!-- Step 4: Ready to Launch -->
         <section class="step-content" id="stepView4">
           <h2 class="step-title">Your workspace is <span class="gradient-text">ready</span></h2>
-          <p class="step-desc">Your customized environment has been configured. Select a starting prompt or launch directly.</p>
+          <p class="step-desc">Your customized environment has been configured. Select a starting prompt or launch
+            directly.</p>
 
           <div class="launch-summary-card">
             <div class="summary-meta-grid">
@@ -224,15 +240,20 @@
 
             <div class="suggested-prompts-title">💡 Suggested Quick-Start Prompts</div>
             <div class="suggested-prompts" id="suggestedPrompts">
-              <div class="prompt-chip" data-prompt="Architect a real-time collaborative canvas with WebSockets and CRDTs." role="button" tabindex="0">
+              <div class="prompt-chip"
+                data-prompt="Architect a real-time collaborative canvas with WebSockets and CRDTs." role="button"
+                tabindex="0">
                 <span>"Architect a real-time collaborative canvas with WebSockets and CRDTs."</span>
                 <span class="arrow">→</span>
               </div>
-              <div class="prompt-chip" data-prompt="Refactor this asynchronous data pipeline for sub-50ms latency." role="button" tabindex="0">
+              <div class="prompt-chip" data-prompt="Refactor this asynchronous data pipeline for sub-50ms latency."
+                role="button" tabindex="0">
                 <span>"Refactor this asynchronous data pipeline for sub-50ms latency."</span>
                 <span class="arrow">→</span>
               </div>
-              <div class="prompt-chip" data-prompt="Generate an interactive SVG dashboard widget with modern glassmorphism." role="button" tabindex="0">
+              <div class="prompt-chip"
+                data-prompt="Generate an interactive SVG dashboard widget with modern glassmorphism." role="button"
+                tabindex="0">
                 <span>"Generate an interactive SVG dashboard widget with modern glassmorphism."</span>
                 <span class="arrow">→</span>
               </div>
@@ -269,7 +290,8 @@
               Ameer AI ChatBot
               <span class="model-badge" id="chatModelBadge">gemini-flash-latest</span>
             </div>
-            <div style="font-size: 0.75rem; color: var(--accent-cyan);" id="activePersonaBadge">Software Architect Mode</div>
+            <div style="font-size: 0.75rem; color: var(--accent-cyan);" id="activePersonaBadge">Software Architect Mode
+            </div>
           </div>
         </div>
         <div style="display: flex; gap: 8px;">
@@ -303,7 +325,8 @@
             </select>
           </div>
           <div class="settings-footer">
-            <button class="btn btn-primary" id="saveSettingsBtn" style="padding: 6px 14px; font-size: 0.8rem;">Save Settings</button>
+            <button class="btn btn-primary" id="saveSettingsBtn" style="padding: 6px 14px; font-size: 0.8rem;">Save
+              Settings</button>
             <span id="saveNotice" style="font-size: 0.75rem; color: #4ade80; display: none;">Saved!</span>
           </div>
         </div>
@@ -312,13 +335,16 @@
       <div class="chat-stream" id="chatStream">
         <div class="msg-row ai">
           <div class="msg-bubble" id="welcomeChatMsg">
-            👋 <strong>Welcome!</strong> I am calibrated to your preferences as your <strong>Software Architect &amp; Coder</strong>. Connected via Ameer AI Engine (Google Gemini). How can I help you build today?
+            👋 <strong>Welcome!</strong> I am calibrated to your preferences as your <strong>Software Architect &amp;
+              Coder</strong>. Connected via Ameer AI Engine (Google Gemini). How can I help you build today?
           </div>
         </div>
       </div>
 
       <form class="chat-input-zone" id="chatForm">
-        <textarea class="chat-input-field" id="chatInputField" rows="1" placeholder="Ask Ameer AI anything about code, architecture, or research... (Enter to send, Shift+Enter for newline)" autocomplete="off"></textarea>
+        <textarea class="chat-input-field" id="chatInputField" rows="1"
+          placeholder="Ask Ameer AI anything about code, architecture, or research... (Enter to send, Shift+Enter for newline)"
+          autocomplete="off"></textarea>
         <button type="submit" class="btn btn-primary" id="sendBtn" style="padding: 10px 20px;">Send ↵</button>
       </form>
     </div>
@@ -326,4 +352,5 @@
 
   <script src="app.js"></script>
 </body>
+
 </html>

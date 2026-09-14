@@ -207,7 +207,21 @@ class ChatServerHandler(SimpleHTTPRequestHandler):
                     raise last_err
                 raise RuntimeError("No candidate model produced a valid response.")
 
-            reply_text = getattr(response, 'text', None) or "(Empty response received)"
+            reply_text = ""
+            try:
+                reply_text = response.text or ""
+            except Exception:
+                pass
+
+            if not reply_text:
+                try:
+                    parts = response.candidates[0].content.parts
+                    reply_text = "".join(getattr(p, 'text', '') for p in parts if getattr(p, 'text', None))
+                except Exception:
+                    pass
+
+            if not reply_text:
+                reply_text = "(Response was empty or filtered by safety guidelines)"
 
             self.send_response(200)
             self.send_header('Content-Type', 'application/json')

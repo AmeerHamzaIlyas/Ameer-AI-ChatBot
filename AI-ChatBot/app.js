@@ -571,26 +571,19 @@ export class AgentStreamSession {
       console.warn('Backend query error, falling back to local reasoning simulator:', err);
       bubble.classList.remove('loading');
 
-      let errorNotice = '';
-      if (err.message.includes('Failed to fetch')) {
-        errorNotice = `<div style="color: #fbbf24; font-size: 0.82rem; margin-bottom: 8px;">ℹ️ <em>Running in offline simulation mode (start Python server.py for live GCP Gemini API responses).</em></div>`;
+      let errorContent = '';
+      if (err.message && err.message.includes('Failed to fetch')) {
+        errorContent = `<div style="padding: 10px 14px; background: rgba(239, 68, 68, 0.12); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 8px; color: #fca5a5; font-size: 0.88rem; line-height: 1.5;">
+          <strong>⚠️ Server Connection Error:</strong><br>
+          Unable to reach Ameer AI Server. Please ensure <code>python server.py</code> is running and your device is connected to the network.
+        </div>`;
       } else {
-        errorNotice = `<div style="color: #f87171; font-size: 0.82rem; margin-bottom: 8px;">⚠️ <em>Gemini Notice: ${err.message}</em></div>`;
+        errorContent = `<div style="padding: 10px 14px; background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 8px; color: #fcd34d; font-size: 0.88rem; line-height: 1.5;">
+          <strong>⚠️ Gemini API Error:</strong> ${err.message}
+        </div>`;
       }
 
-      let simulatedReply = '';
-      if (userConfig.persona === 'Software Architect') {
-        simulatedReply = `### Architectural Breakdown: "${userText}"\n\n1. **Pattern Recommendation**: Implement an event-driven decoupled service topology.\n2. **Resilience**: Enforce circuit breakers and exponential backoff retry policies.\n3. **Throughput**: Maintain sub-20ms p99 latency with read-replicas and distributed caching.\n\n\`\`\`typescript\nexport interface PipelineConfig {\n  maxConcurrency: number;\n  retryAttempts?: number;\n  timeoutMs?: number;\n}\n\nexport const DEFAULT_PIPELINE_CONFIG: Required<PipelineConfig> = {\n  maxConcurrency: 16,\n  retryAttempts: 3,\n  timeoutMs: 5000,\n};\n\`\`\``;
-      } else if (userConfig.persona === 'Research Analyst') {
-        simulatedReply = `### Empirical Synthesis: "${userText}"\n\n1. **Hypothesis Evaluation**: Metrics support positive variance under distributed load.\n2. **Statistical Significance**: Confidence interval 95% (p < 0.01).\n3. **Recommendation**: Prioritize low-latency caching layer.\n\n\`\`\`python\nimport numpy as np\n# Variance confidence test\nconfidence_interval = np.percentile(latency_samples, [2.5, 97.5])\n\`\`\``;
-      } else if (userConfig.persona === 'Creative Strategist') {
-        simulatedReply = `### Creative Strategy: "${userText}"\n\n• **Core Hook**: Frictionless intelligence directly inside your native workflow.\n• **User Value**: Eliminate cognitive context-switching with proactive reasoning.\n• **Milestone Goal**: Launch developer preview with targeted benchmark proof-points.`;
-      } else {
-        simulatedReply = `### Executive Memo: "${userText}"\n\n1. **Strategic Context**: Alignment with core efficiency and reliability milestones.\n2. **Operational Framework**: Allocate resources to Phase 1 validation.\n3. **Key Result**: Deliver production-ready pipeline within current sprint.`;
-      }
-
-      bubble.innerHTML = errorNotice + renderMarkdown(simulatedReply);
-      attachCopyListeners(bubble);
+      bubble.innerHTML = errorContent;
       chatStream.scrollTo({ top: chatStream.scrollHeight, behavior: 'smooth' });
     } finally {
       setSubmitting(false);
